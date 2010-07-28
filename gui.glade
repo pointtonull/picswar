@@ -1,39 +1,54 @@
 <?xml version="1.0"?>
-<interface>
-  <requires lib="gtk+" version="2.16"/>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.16 -->
   <!-- interface-naming-policy project-wide -->
-  <object class="GtkWindow" id="window1">
-    <property name="width_request">1024</property>
-    <property name="height_request">768</property>
+  <widget class="GtkWindow" id="main">
+    <property name="width_request">640</property>
+    <property name="height_request">480</property>
+    <property name="visible">True</property>
     <property name="events">GDK_EXPOSURE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
     <property name="window_position">center</property>
-    <signal name="key_press_event" handler="on_window1_key_press_event"/>
-    <signal name="key_release_event" handler="on_window1_key_release_event"/>
+    <signal name="destroy" handler="on_main_destroy"/>
+    <signal name="key_press_event" handler="on_main_key_press_event"/>
     <child>
-      <object class="GtkHBox" id="hbox1">
+      <widget class="GtkHBox" id="hbox1">
         <property name="visible">True</property>
         <child>
-          <object class="GtkImage" id="image1">
-            <property name="width_request">0</property>
-            <property name="height_request">0</property>
+          <widget class="GtkEventBox" id="left">
             <property name="visible">True</property>
-            <property name="icon_name">dialog-error</property>
-          </object>
+            <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
+            <signal name="button_press_event" handler="on_left_button_press_event"/>
+            <child>
+              <widget class="GtkImage" id="lefpic">
+                <property name="width_request">0</property>
+                <property name="height_request">0</property>
+                <property name="visible">True</property>
+                <property name="pixbuf">nopic.png</property>
+              </widget>
+            </child>
+          </widget>
           <packing>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <object class="GtkImage" id="image2">
+          <widget class="GtkEventBox" id="rigth">
             <property name="visible">True</property>
-            <property name="icon_name">dialog-error</property>
-          </object>
+            <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
+            <signal name="button_press_event" handler="on_rigth_button_press_event"/>
+            <signal name="key_press_event" handler="on_rigth_key_press_event"/>
+            <child>
+              <widget class="GtkImage" id="rigthpic">
+                <property name="visible">True</property>
+                <property name="pixbuf">nopic.png</property>
+              </widget>
+            </child>
+          </widget>
           <packing>
             <property name="position">1</property>
           </packing>
         </child>
-      </object>
+      </widget>
     </child>
-  </object>
-  <object class="GtkUIManager" id="uimanager1"/>
-</interface>
+  </widget>
+</glade-interface>
