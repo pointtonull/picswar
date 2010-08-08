@@ -41,10 +41,12 @@ class Mainwindow:
             return self.rematch()
         elif info.hardware_keycode == 116:
             return self.draw()
+        elif info.hardware_keycode == 24:
+            return self.destroy()
         else:
             return debug(info.hardware_keycode)
 
-    def destroy(self, w):
+    def destroy(self, w=None):
         return gtk.main_quit()
 
     def left_win(self):
