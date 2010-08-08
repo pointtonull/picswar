@@ -24,23 +24,32 @@ class Mainwindow:
 
 
     def left_clicked(self, w, info):
-        debug("<-")
+        return self.left_win()
 
     def draw_clicked(self, w):
-        debug(" -")
+        return self.draw()
 
     def rigth_clicked(self, w, info):
-        debug(" ->")
+        return self.right_win()
 
     def key_press(self, w, info):
-        debug(w, info)
-        debug(dir(info))
-        debug(info.string)
-        debug(info.hardware_keycode)
-        debug(info.keyval)
+        if info.hardware_keycode == 113:
+            return self.left_win()
+        elif info.hardware_keycode == 114:
+            return self.right_win()
 
     def destroy(self, w):
-        gtk.main_quit()
+        return gtk.main_quit()
+
+    def left_win(self):
+        return debug("<-")
+
+    def draw(self):
+        return debug(" -")
+
+    def right_win(self):
+        return debug(" ->")
+
 
 def cerf(x):
     """Complementary error function."""
