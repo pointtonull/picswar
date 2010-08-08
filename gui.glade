@@ -1,47 +1,95 @@
 <?xml version="1.0"?>
 <glade-interface>
-  <!-- interface-requires gtk+ 2.16 -->
-  <!-- interface-naming-policy project-wide -->
+  <!-- interface-requires gtk+ 2.6 -->
+  <!-- interface-naming-policy toplevel-contextual -->
   <widget class="GtkWindow" id="main">
     <property name="width_request">640</property>
     <property name="height_request">480</property>
     <property name="visible">True</property>
-    <property name="events">GDK_EXPOSURE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
-    <property name="window_position">center</property>
     <signal name="destroy" handler="on_main_destroy"/>
     <signal name="key_press_event" handler="on_main_key_press_event"/>
     <child>
-      <widget class="GtkHBox" id="hbox1">
+      <widget class="GtkVBox" id="vbox1">
         <property name="visible">True</property>
         <child>
-          <widget class="GtkEventBox" id="left">
+          <widget class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
-            <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
-            <signal name="button_press_event" handler="on_left_button_press_event"/>
             <child>
-              <widget class="GtkImage" id="lefpic">
-                <property name="width_request">0</property>
-                <property name="height_request">0</property>
+              <widget class="GtkLabel" id="left name">
                 <property name="visible">True</property>
-                <property name="pixbuf">nopic.png</property>
+                <property name="label" translatable="yes">Imagen Izquierda</property>
               </widget>
+              <packing>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="draw">
+                <property name="label" translatable="yes">draw</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_draw_clicked"/>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="rigth name">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Imagen Derecha</property>
+              </widget>
+              <packing>
+                <property name="fill">False</property>
+                <property name="position">2</property>
+              </packing>
             </child>
           </widget>
           <packing>
+            <property name="expand">False</property>
             <property name="position">0</property>
           </packing>
         </child>
         <child>
-          <widget class="GtkEventBox" id="rigth">
+          <widget class="GtkHBox" id="hbox2">
             <property name="visible">True</property>
-            <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
-            <signal name="button_press_event" handler="on_rigth_button_press_event"/>
-            <signal name="key_press_event" handler="on_rigth_key_press_event"/>
             <child>
-              <widget class="GtkImage" id="rigthpic">
+              <widget class="GtkEventBox" id="left">
                 <property name="visible">True</property>
-                <property name="pixbuf">nopic.png</property>
+                <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
+                <signal name="button_press_event" handler="on_left_button_press_event"/>
+                <signal name="key_press_event" handler="on_left_key_press_event"/>
+                <child>
+                  <widget class="GtkImage" id="leftpic">
+                    <property name="visible">True</property>
+                    <property name="pixbuf">nopic.png</property>
+                    <property name="icon-size">3</property>
+                  </widget>
+                </child>
               </widget>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEventBox" id="right">
+                <property name="visible">True</property>
+                <property name="events">GDK_BUTTON_PRESS_MASK | GDK_STRUCTURE_MASK</property>
+                <signal name="button_press_event" handler="on_right_button_press_event"/>
+                <signal name="key_press_event" handler="on_right_key_press_event"/>
+                <child>
+                  <widget class="GtkImage" id="rightpic">
+                    <property name="visible">True</property>
+                    <property name="pixbuf">nopic.png</property>
+                    <property name="icon-size">6</property>
+                  </widget>
+                </child>
+              </widget>
+              <packing>
+                <property name="position">1</property>
+              </packing>
             </child>
           </widget>
           <packing>
