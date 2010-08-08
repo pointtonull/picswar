@@ -26,7 +26,7 @@
             </child>
             <child>
               <widget class="GtkButton" id="draw">
-                <property name="label" translatable="yes">draw</property>
+                <property name="label" translatable="yes">Draw</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>

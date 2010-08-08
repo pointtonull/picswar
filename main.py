@@ -15,18 +15,22 @@ class Mainwindow:
         self.left = self.wtree.get_widget("left")
 
         self.wtree.signal_autoconnect({
-            "on_main_key_press_event": self.key_press,
-            "on_main_destroy": self.destroy,
+            "on_draw_clicked": self.draw_clicked,
             "on_left_button_press_event": self.left_clicked,
+            "on_main_destroy": self.destroy,
+            "on_main_key_press_event": self.key_press,
             "on_right_button_press_event": self.rigth_clicked,
         })
 
 
     def left_clicked(self, w, info):
-        debug(w, info)
+        debug("<-")
+
+    def draw_clicked(self, w):
+        debug(" -")
 
     def rigth_clicked(self, w, info):
-        debug(w, info)
+        debug(" ->")
 
     def key_press(self, w, info):
         debug(w, info)
