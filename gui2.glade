@@ -24,13 +24,13 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="empate">
+              <widget class="GtkButton" id="draw">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">Empate</property>
+                <property name="label" translatable="yes">draw</property>
                 <property name="response_id">0</property>
-                <signal name="clicked" handler="on_empate_clicked"/>
+                <signal name="clicked" handler="on_draw_clicked"/>
               </widget>
               <packing>
                 <property name="position">1</property>
