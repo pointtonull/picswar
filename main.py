@@ -18,7 +18,7 @@ class Mainwindow:
             "on_main_key_press_event": self.key_press,
             "on_main_destroy": self.destroy,
             "on_left_button_press_event": self.left_clicked,
-            "on_rigth_button_press_event": self.rigth_clicked,
+            "on_right_button_press_event": self.rigth_clicked,
         })
 
 

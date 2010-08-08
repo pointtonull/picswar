@@ -37,7 +37,7 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkLabel" id="rigth name">
+              <widget class="GtkLabel" id="right name">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">Imagen Derecha</property>
               </widget>
