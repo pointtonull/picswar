@@ -37,6 +37,12 @@ class Mainwindow:
             return self.left_win()
         elif info.hardware_keycode == 114:
             return self.right_win()
+        elif info.hardware_keycode == 111:
+            return self.rematch()
+        elif info.hardware_keycode == 116:
+            return self.draw()
+        else:
+            return debug(info.hardware_keycode)
 
     def destroy(self, w):
         return gtk.main_quit()
@@ -44,11 +50,14 @@ class Mainwindow:
     def left_win(self):
         return debug("<-")
 
+    def right_win(self):
+        return debug(" ->")
+
     def draw(self):
         return debug(" -")
 
-    def right_win(self):
-        return debug(" ->")
+    def rematch(self):
+        return debug("Rematch")
 
 
 def cerf(x):
